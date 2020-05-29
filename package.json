@@ -1,5 +1,6 @@
 {
   "name": "stradivarius-app",
+  "homepage": ".",
   "version": "1.0.0",
   "main": "index.js",
   "author": "Jorge Vento",
@@ -9,6 +10,7 @@
     "build:prod": "webpack -p --env production",
     "start:devserver": "webpack-dev-server",
     "start": "node server/server.js",
+    "heroku-postbuild": "npm run build:prod",
     "lint": "eslint src/**/*.{js,jsx}",
     "lint:fix": "eslint src/**/*.{js,jsx} --fix",
     "prettier": "prettier --write src/**/*.{js,jsx,json,css,scss,md}",
