@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render LocationSearchInput correctly 1`] = `
+<PlacesAutocomplete
+  debounce={200}
+  highlightFirstSuggestion={false}
+  onChange={[Function]}
+  onError={[Function]}
+  onSelect={[Function]}
+  searchOptions={Object {}}
+  shouldFetchSuggestions={true}
+  value=""
+>
+  <Component />
+</PlacesAutocomplete>
+`;

@@ -1,0 +1,18 @@
+.location-search-input{
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 100px;
+  width: 90%;
+  transition: all .2s;
+  margin-right: -3.25rem;
+
+  &::placeholder {
+      color: rgba($color-primary-dark-1, 0.3);
+  }
+
+  &:focus {
+      outline: none;
+      width: 100%;
+  }
+
+}

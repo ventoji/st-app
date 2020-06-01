@@ -16,7 +16,7 @@
     "prettier": "prettier --write src/**/*.{js,jsx,json,css,scss,md}",
     "lint-staged": "lint-staged",
     "stylelint:fix": "stylelint src/styles/**/*.scss --syntax scss --cache --fix",
-    "test": "cross-env NODE_ENV=test jest --config=jest.config.json"
+    "test": "cross-env NODE_ENV=test jest --config=jest.config.json --watch"
   },
   "lint-staged": {
     "src/**/*.{js,jsx}": [
@@ -38,6 +38,7 @@
     "css-loader": "^3.5.3",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "google-maps-react": "^2.0.6",
     "history": "^4.10.1",
     "node-sass": "^4.14.1",
     "normalize.css": "8.0.1",
@@ -45,9 +46,12 @@
     "postcss-loader": "^3.0.0",
     "raf": "^3.4.1",
     "react": "^16.13.1",
+    "react-addons": "^0.9.1-deprecated",
     "react-addons-shallow-compare": "^15.6.2",
     "react-dom": "^16.13.1",
     "react-modal": "^3.11.2",
+    "react-places-autocomplete": "^7.2.1",
+    "react-pure-render": "^1.0.2",
     "react-redux": "^7.2.0",
     "react-router-dom": "^5.2.0",
     "redux": "^4.0.5",

@@ -13,6 +13,7 @@ const store = configureStore();
 
 // const state = store.getState();
 // console.log(store.getState());
+const unsubscribe = store.subscribe(() => console.log(store.getState()));
 
 const app = (
   <Provider store={store}>

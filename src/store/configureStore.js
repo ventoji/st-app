@@ -1,14 +1,12 @@
-import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
-import authReducer from '../reducers/auth';
+import locationReducer from '../reducers/locations';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-
+// Store configuration to handle Redux State.
 export default () => {
   const store = createStore(
-    combineReducers({
-      auth: authReducer,
-    }),
+    locationReducer,
     composeEnhancers(applyMiddleware(thunk)),
   );
 

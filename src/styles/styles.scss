@@ -1,6 +1,9 @@
+@import './abstracts/variables';
 @import './base/settings';
 @import './base/base';
-@import './components/box-layout';
 @import './components/loader';
+@import './components/search-container';
+@import './components/location_search_input';
+@import './components/map-container';
 @import './layout/header';
 @import './layout/layout';

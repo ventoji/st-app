@@ -18,10 +18,12 @@ module.exports = (env) => {
 
   const envKeys = Object.keys(env1).reduce((prev, next) => {
     prev[`process.env.${next}`] = JSON.stringify(env1[next]);
+    console.log(JSON.stringify(env1[next]));
     return prev;
   }, {});
 
   return {
+    mode: process.env.NODE_ENV || 'development',
     entry: ['babel-polyfill', './src/app.js'],
     output: {
       path: path.join(__dirname, 'public', 'dist'),

@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Header coorectly 1`] = `
+<div
+  className="container"
+/>
+`;
+
+exports[`should render Layout coorectly 1`] = `
+<div
+  className="container"
+/>
+`;

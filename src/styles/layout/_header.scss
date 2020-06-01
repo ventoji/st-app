@@ -1,5 +1,6 @@
+// Header styles
 .header {
-  background: $dark-blue;
+  background: $color-primary;
 }
 
 .header__content {
@@ -10,10 +11,11 @@
 }
 
 .header__title {
-  color: #FFFFFF;
+  color: $color-primary-light-1;
   text-decoration: none;
 
   h1 {
-    margin: 0;
+    margin: 0 2rem;
+    padding: 2rem;
   }
 }

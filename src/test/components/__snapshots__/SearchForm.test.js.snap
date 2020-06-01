@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render SearchForm correctly 1`] = `
+<LocationSearchInput
+  onSearchChange={[Function]}
+  onSelectChange={[Function]}
+/>
+`;

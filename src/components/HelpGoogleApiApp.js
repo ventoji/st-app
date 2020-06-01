@@ -3,7 +3,9 @@ import Layout from '../components/Layout';
 
 const HelpExpensePage = () => (
   <Layout>
-    <p> quicly explanation how to use it</p>;
+    <div>
+      <p> helping page</p>
+    </div>
   </Layout>
 );
 
