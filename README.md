@@ -1,9 +1,18 @@
 
-# React pages boilerplate
+# App example
 
 This app shows the places a user introduce on the input form and a marker is added to the map. All the places a user show are registered in a redux state and all the markers are show to demonstrate
 the functionality. The Map size has been limited in order to show the required functionality, and
 all control actions has been limited too in order to avoid costs and unncessary request without a useful objective (zoom, dragger, etc). The same applied for mobile, only a part is shown and you can find places you see on that view.
+
+You need an API_KEY to run the app and you must set that value (APP_KEY_GOOGLE_MAPS) in .env and .env.development files. To run locally, build the app for development executing the following commands. Refer to npm scripts for more details of every script.
+
+    ```shell
+    cd st_app_master
+    npm install
+    npm run build:dev
+    npm run start:devserver
+    ```
 
 ## Technologies
 
