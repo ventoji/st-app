@@ -18,7 +18,7 @@ module.exports = (env) => {
 
   const envKeys = Object.keys(env1).reduce((prev, next) => {
     prev[`process.env.${next}`] = JSON.stringify(env1[next]);
-    console.log(JSON.stringify(env1[next]));
+  //  console.log(JSON.stringify(env1[next]));
     return prev;
   }, {});
 

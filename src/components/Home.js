@@ -1,3 +1,8 @@
+/**
+ *  Render the main view for the App
+ *  SearchLocation a connected component to display the Search form
+ *  MapContainer: Display the Google Map.
+ */
 import React from 'react';
 import Layout from '../components/Layout';
 import SearchLocation from '../container/SearchLocation';

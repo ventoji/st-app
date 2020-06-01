@@ -1,3 +1,9 @@
+/**
+ * Map: show the map view with a defauls values you can modify on utils/index.js
+ * InfoWindow: show information on a Marker in the Map
+ * GoogleApiWrapper: a HOC to set google maps API optiones
+ *  Redux state is accesible in this components to handle input search form.
+ */
 import React, { Component } from 'react';
 import { Map, InfoWindow, Marker, GoogleApiWrapper } from 'google-maps-react';
 import shouldPureComponentUpdate from 'react-pure-render/function';
@@ -31,17 +37,13 @@ export class MapContainer extends Component {
     this.resize();
   }
   // Detect changes on the input search and update it properly
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate(prevProps) {
     /*    if (prevProps.google !== this.props.google) {
       console.log('component has changed');
     } */
 
     if (prevProps.places !== this.props.places) {
-      /*       console.log(
-        'PLACES HAS CHAGED',
-        this.props.places[this.props.places.length - 1],
-      ); */
-
+      // If user search for a place, a marker is added to the Map
       this.setState(
         {
           stores: [
@@ -68,16 +70,16 @@ export class MapContainer extends Component {
     }
   }
 
+  // Resize the Maps on Mobile Device.
   resize() {
     let currentHideNav = window.innerWidth <= 760;
-    //  console.log(currentHideNav, window.innerWidth);
     if (currentHideNav !== this.state.hideNav) {
       this.setState({ hideNav: currentHideNav });
     }
   }
 
+  // When infoView is closed change properties for the marker
   onInfoWindowClose = () => {
-    //   console.log('click Info');
     if (this.state.showingInfoWindow) {
       this.setState({
         showingInfoWindow: false,
@@ -85,6 +87,9 @@ export class MapContainer extends Component {
       });
     }
   };
+
+  // Show the name of the place the user has serached for
+
   onMarkerClick = (props, marker) => {
     this.setState({
       selectedPlace: props,
@@ -115,6 +120,17 @@ export class MapContainer extends Component {
         google={this.props.google}
         zoom={this.state.zoom}
         initialCenter={this.state.center}
+        scrollwheel={false}
+        draggable={false}
+        keyboardShortcuts={false}
+        disableDoubleClickZoom={true}
+        zoomControl={false}
+        mapTypeControl={false}
+        scaleControl={false}
+        streetViewControl={false}
+        panControl={false}
+        rotateControl={false}
+        fullscreenControl={false}
       >
         {this.displayMarkers()}
 
@@ -144,6 +160,8 @@ export const GoogleApi = connect(
   mapDispatchToProps,
 )(MapContainer);
 
+// Fetch to Google Maps API
 export default GoogleApiWrapper({
   apiKey: process.env.APP_KEY_GOOGLE_MAPS,
+  libraries: ['places'],
 })(GoogleApi);

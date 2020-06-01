@@ -5,7 +5,7 @@ const Header = () => (
   <header className="header">
     <div className="content-container">
       <div className="header__content">
-        <Link className="header__title" to="/">
+        <Link className="header__title" to="#">
           <h1> Google API app </h1>
         </Link>
       </div>

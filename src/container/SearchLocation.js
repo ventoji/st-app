@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { setLocationToSearch, setLocationsHistory } from '../actions/locations';
 import { bindActionCreators } from 'redux';
-import { SearchForm } from '../components/SearchForm';
+import SearchForm from '../components/SearchForm';
 
 /* export const mapStateToProps = (state) => ({
   place: state.place,

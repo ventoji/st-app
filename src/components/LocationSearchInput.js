@@ -1,3 +1,9 @@
+/**
+ * LocationSearchInput is a component from the third party library
+ * https://www.npmjs.com/package/react-places-autocomplete
+ * handleSelect and handleChange were customized for the app to handle
+ * state redux.
+ */
 import React from 'react';
 import PlacesAutocomplete, {
   geocodeByAddress,
@@ -7,16 +13,18 @@ import PlacesAutocomplete, {
 class LocationSearchInput extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { address: '' };
+    this.state = {
+      address: '',
+      error: '',
+    };
   }
 
   handleChange = (address) => {
     this.setState({ address });
-    //   console.log('child change', address);
     if (this.props.onSearchChange) this.props.onSearchChange({ address });
   };
 
-  /*   handleSelect = (address) => {
+  handleSelect = (address) => {
     geocodeByAddress(address)
       .then((results) => getLatLng(results[0]))
       .then((latLng) => {
@@ -24,15 +32,11 @@ class LocationSearchInput extends React.Component {
         if (this.props.onSelectChange)
           this.props.onSelectChange({ address, latLng });
       })
-      .catch((error) => console.error('Error', error));
-  }; */
-
-  handleSelect = (address) => {
-    const latLng = {
-      lat: 40.2056646,
-      lng: -5.51,
-    };
-    this.props.onSelectChange({ address, latLng });
+      .catch((error) => {
+        this.setState({
+          error: 'Connecting to Google Maps Api Failed',
+        });
+      });
   };
 
   render() {
