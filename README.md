@@ -1,7 +1,7 @@
 
 # App example
 
-This app shows the places a user introduce on the input form and a marker is added to the map. All the places a user show are registered in a redux state and all the markers are show to demonstrate
+This app shows the places a user introduce on the input form and a marker is added to the map. All the places a user looks for are registered in a redux state and all the markers are show to demonstrate
 the functionality. The Map size has been limited in order to show the required functionality, and
 all control actions has been limited too in order to avoid costs and unncessary request without a useful objective (zoom, dragger, etc). The same applied for mobile, only a part is shown and you can find places you see on that view.
 

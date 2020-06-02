@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import AppMain from './routers/AppMain';
+import AppMain, { history } from './routers/AppMain';
 import configureStore from './store/configureStore';
 
 import 'normalize.css/normalize.css';
@@ -32,4 +32,5 @@ ReactDOM.render(<LoadingPage />, document.getElementById('app'));
 
 setTimeout(() => {
   renderApp();
+  history.push('/');
 }, 1500);

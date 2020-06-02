@@ -4,12 +4,7 @@
  */
 
 import React from 'react';
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  Redirect,
-} from 'react-router-dom';
+import { Router, Route, Switch } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 import Header from '../components/Header';
 import Home from '../components/Home';
@@ -17,12 +12,11 @@ import Home from '../components/Home';
 export const history = createBrowserHistory();
 
 const AppMain = () => (
-  <Router forceRefresh={false}>
+  <Router history={history}>
     <Header />
     <div>
       <Switch>
-        <Route path="/" component={Home} />
-        <Redirect to="/" />
+        <Route path="/" component={Home} exact />
       </Switch>
     </div>
   </Router>
